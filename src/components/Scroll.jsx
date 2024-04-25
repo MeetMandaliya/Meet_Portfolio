@@ -33,7 +33,7 @@ const ScrollToTopButton = () => {
       }`}
       onClick={scrollToTop}
     >
-      <div className="bottom-0 cursor-pointer text-center sm:w-[40px] w-[30px] h-[30px] sm:h-[40px] pt-1 sm:pt-2 rounded bg-blue-700 ">
+      <div className="bottom-0 cursor-pointer text-center sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] pt-[0.7] sm:pt-2 rounded bg-blue-700 ">
             <i className="fa fa-solid w-6 h-6 text-white fa-arrow-up"></i>
           </div>
     </div>

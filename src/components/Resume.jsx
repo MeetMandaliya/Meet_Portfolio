@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 
 const Resume = () => {
-  // const percentage = 50;
-  // const radius = 40;
   const circumference = 2 * Math.PI * 40;
-  // const progress = circumference - (percentage / 100) * circumference;
 
   const [activeSection, setActiveSection] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
 
   const sectionRefs = {
     education: useRef(null),
@@ -47,15 +46,40 @@ const Resume = () => {
     };
   }, [sectionRefs]);
 
+  const sectionRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "10px",
+        threshold: 0.4,
+      }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
-      <section className="z-20">
+      <section className={`z-20 ${isVisible ? "opacity-70" : "opacity-100"}`} ref={sectionRef}>
         <div className="flex flex-col sm:flex-row pt-[50px]">
         <div className="sm:hidden block m-auto w-full">
             <h1 className="text-[40px] pt-[50px] text-center">Resume</h1>
           </div>
-          <div className="sm:w-4/12 sm:sticky sm:top-[90px] sm:h-full h-[10%] w-4/12 sm:mt-[70px] ml-[12%]">
-            <div className=" sm:h-full p-4 pl-0 pr-0">
+          <div className={`sm:w-4/12 sm:sticky sm:top-[90px] mb-[20%] sm:h-full h-[10%] w-4/12 sm:mt-[70px] ml-[12%] ${
+            isVisible ? "translate-y-0" : "translate-y-10 delay-100 opacity-100"
+          }`}>
+            <div className="sm:h-full p-4 pl-0 pr-0">
               <ul className="font-[600]">
                 <li
                   onClick={() => scrollToSection("education")}
@@ -85,19 +109,19 @@ const Resume = () => {
                             strokeLinejoin="round"
                           ></g>
                           <g id="SVGRepo_iconCarrier">
-                            {" "}
+                            
                             <g>
-                              {" "}
+                              
                               <g>
-                                {" "}
+                                
                                 <rect
                                   y="139.474"
                                   style={{ fill: "#0e00d6" }}
                                   width="290.658"
                                   height="11.711"
-                                ></rect>{" "}
-                              </g>{" "}
-                            </g>{" "}
+                                ></rect>
+                              </g>
+                            </g>
                           </g>
                         </svg>
                       </>
@@ -105,6 +129,7 @@ const Resume = () => {
                     Education
                   </span>
                 </li>
+                
                 <li
                   onClick={() => scrollToSection("skills")}
                   className={`mt-[15px] cursor-pointer ${
@@ -112,6 +137,7 @@ const Resume = () => {
                   } `}
                 >
                   <span className="flex font-[700]">
+                  
                     {activeSection === "skills" && (
                       <>
                         <svg
@@ -133,19 +159,19 @@ const Resume = () => {
                             strokeLinejoin="round"
                           ></g>
                           <g id="SVGRepo_iconCarrier">
-                            {" "}
+                            
                             <g>
-                              {" "}
+                              
                               <g>
-                                {" "}
+                                
                                 <rect
                                   y="139.474"
                                   style={{ fill: "#0e00d6" }}
                                   width="290.658"
                                   height="11.711"
-                                ></rect>{" "}
-                              </g>{" "}
-                            </g>{" "}
+                                ></rect>
+                              </g>
+                            </g>
                           </g>
                         </svg>
                       </>
@@ -181,19 +207,19 @@ const Resume = () => {
                             strokeLinejoin="round"
                           ></g>
                           <g id="SVGRepo_iconCarrier">
-                            {" "}
+                            
                             <g>
-                              {" "}
+                              
                               <g>
-                                {" "}
+                                
                                 <rect
                                   y="139.474"
                                   style={{ fill: "#0e00d6" }}
                                   width="290.658"
                                   height="11.711"
-                                ></rect>{" "}
-                              </g>{" "}
-                            </g>{" "}
+                                ></rect>
+                              </g>
+                            </g>
                           </g>
                         </svg>
                       </>
@@ -726,6 +752,7 @@ const Resume = () => {
                     </h3>
                   </div>
                 </div>
+                
 
                 <div className="flex flex-col rounded h-[180px] shadow-xl items-center">
                   <div className="relative m-auto">
@@ -765,6 +792,46 @@ const Resume = () => {
                   </div>
                   <div className="mb-2 text-center">
                     <h3 className="text-lg font-semibold uppercase">Jquery</h3>
+                  </div>
+                </div>
+                <div className="flex flex-col rounded h-[180px] shadow-xl items-center">
+                  <div className="relative m-auto">
+                    <svg
+                      className="transform -rotate-90"
+                      width="100"
+                      height="100"
+                    >
+                      <circle
+                        className="text-gray-300"
+                        strokeLinecap="round"
+                        strokeWidth="5"
+                        fill="transparent"
+                        r={40}
+                        cx="50"
+                        cy="50"
+                        stroke="currentColor"
+                      />
+                      <circle
+                        className="text-blue-500"
+                        strokeLinecap="round"
+                        strokeWidth="5"
+                        fill="transparent"
+                        r={40}
+                        cx="50"
+                        cy="50"
+                        strokeDasharray={circumference}
+                        strokeDashoffset={65}
+                        stroke="currentColor"
+                      />
+                    </svg>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="text-center">
+                        <p className="text-2xl text-black">{`75%`}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mb-2 text-center">
+                    <h3 className="text-lg font-semibold uppercase">PHP</h3>
                   </div>
                 </div>
 
@@ -892,47 +959,9 @@ const Resume = () => {
                     </h3>
                   </div>
                 </div>
+                
 
-                <div className="flex flex-col rounded h-[180px] shadow-xl items-center">
-                  <div className="relative m-auto">
-                    <svg
-                      className="transform -rotate-90"
-                      width="100"
-                      height="100"
-                    >
-                      <circle
-                        className="text-gray-300"
-                        strokeLinecap="round"
-                        strokeWidth="5"
-                        fill="transparent"
-                        r={40}
-                        cx="50"
-                        cy="50"
-                        stroke="currentColor"
-                      />
-                      <circle
-                        className="text-blue-500"
-                        strokeLinecap="round"
-                        strokeWidth="5"
-                        fill="transparent"
-                        r={40}
-                        cx="50"
-                        cy="50"
-                        strokeDasharray={circumference}
-                        strokeDashoffset={65}
-                        stroke="currentColor"
-                      />
-                    </svg>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="text-center">
-                        <p className="text-2xl text-black">{`75%`}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-2 text-center">
-                    <h3 className="text-lg font-semibold uppercase">PHP</h3>
-                  </div>
-                </div>
+                
               </div>
             </div>
             <div

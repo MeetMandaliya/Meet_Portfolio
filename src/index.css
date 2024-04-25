@@ -10,7 +10,7 @@
 .border_effect{
     display: inline-block;
     color: black;
-    padding-bottom: 6px;
+    padding-bottom: 10px;
     text-decoration: none;
     /* border-bottom: 2px solid transparent; */
 }
@@ -37,7 +37,7 @@
 .active{
     display: inline-block;
     color: blue;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
     border-bottom: 2px solid blue;
 }
 
@@ -48,6 +48,7 @@
 .progress-custom::-webkit-progress-bar {
     background-color: #f3f4f6; 
 }
+
 .custom-svg {
     color: #1932ae;
     transition: color 0.3s; 
@@ -56,22 +57,5 @@
 .custom-svg:hover {
     color: #ffffff;
 }
-.text_black{
-  color: black;
-}
 
-@media (max-width: 400px) {
-    .design{
-        left: 47%;
-    }
-}
-@media (max-width: 300px) {
-    .design{
-        left: 35% !important
-    }
-}
-@media (min-width: 200px) {
-    .design{
-        left: 20%;
-    }
-}
+

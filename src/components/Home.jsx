@@ -86,7 +86,7 @@ const Home = ({ scrollToSection, activeSection }) => {
               }`}
             >
               <div
-                className={`ml-[12%] lg:ml-[12%] m-auto pt-7 w-[120px] !-mt-2`}
+                className={`ml-[12%] lg:ml-[12%] m-auto pt-7 w-[100px] sm:w-[120px] !-mt-2`}
               >
                 <img src={logo} alt="Image" />
               </div>
@@ -97,7 +97,7 @@ const Home = ({ scrollToSection, activeSection }) => {
                 >
                   <i class="text-[20px] fa fa-solid fa-xmark"></i>
                 </div>
-                <div className={`${showMenu ?"": "hidden"}`}>
+                <div className={`${showMenu ? "" : "hidden"}`}>
                   <ul
                     className={`${
                       showNavbar && "hidden"
@@ -132,7 +132,7 @@ const Home = ({ scrollToSection, activeSection }) => {
                 </li>
                 <li className="">
                   <a
-                    className={`cursor-pointer ${
+                    className={`cursor-pointer h-[30px] ${
                       activeSection === "about" ? "active" : "border_effect"
                     }`}
                     onClick={() => scrollToSection("about")}
@@ -174,47 +174,47 @@ const Home = ({ scrollToSection, activeSection }) => {
             </nav>
           </div>
           <div className="relative">
-          <div className="absolute sm:right-[55%] right-[70%] -top-[240px] sm:-top-[200px]">
-          {/* <div className="absolute lg:top-[420px] top-[390px] left-[27%] sm:right-0 sm:top-[420px] sm:left-[34%] xl:top-[420px] md:left-[38%] lg:left-[40%] xl:left-[42%]"> */}
-            <div className="relative w-[20px]">
-              <div className="w-0 rotate-90 h-0 border-l-[130px] border-l-transparent border-r-transparent border-r-[110px] border-b-[140px] border-b-[#ebefff]"></div>
-              <div
-                className="absolute cursor-pointer left-[112px] top-[70px]"
-                onClick={() => scrollToSection("resume")}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 64 64"
-                  width="24"
-                  height="24"
-                  className="animate-bounce mx-auto "
+            <div className="absolute sm:right-[55%] right-[75%] -top-[240px] sm:-top-[240px]">
+              {/* <div className="absolute lg:top-[420px] top-[390px] left-[27%] sm:right-0 sm:top-[420px] sm:left-[34%] xl:top-[420px] md:left-[38%] lg:left-[40%] xl:left-[42%]"> */}
+              <div className="relative w-[20px]">
+                <div className="w-0 rotate-90 h-0 border-l-[130px] border-l-transparent border-r-transparent border-r-[110px] border-b-[140px] border-b-[#ebefff]"></div>
+                <div
+                  className="absolute cursor-pointer left-[112px] top-[70px]"
+                  onClick={() => scrollToSection("resume")}
                 >
-                  <path
-                    fill="none"
-                    stroke="#595bd4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="4"
-                    d="M32 61l28-28-28 28-28-28"
-                  />
-                  <line
-                    x1="32"
-                    y1="0"
-                    x2="32"
-                    y2="61"
-                    fill="none"
-                    stroke="#595bd4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="4"
-                  />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64"
+                    width="24"
+                    height="24"
+                    className="animate-bounce mx-auto "
+                  >
+                    <path
+                      fill="none"
+                      stroke="#595bd4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="4"
+                      d="M32 61l28-28-28 28-28-28"
+                    />
+                    <line
+                      x1="32"
+                      y1="0"
+                      x2="32"
+                      y2="61"
+                      fill="none"
+                      stroke="#595bd4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="4"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
-          </div>
         </div>
-        <div className="absolute navbar_white z-30 top-[180px] sm:top-[200px] w-full">
+        <div className="absolute navbar_white z-30 top-[150px] sm:top-[170px] md:top-[200px] w-full">
           <div className="flex flex-col text-center justify-center">
             <h1 className="lg:font-[800] sm:font-[700] font-[600] md:font-[800] text-[#3e64ff] text-[14px] sm:text-[15px] md:text-[16px] tracking-widest">
               HEY! I AM

@@ -7,11 +7,11 @@ const Projects = () => {
         <div className="text-center text-[50px] font-[700]">Projects</div>
         <div className="w-full mt-[50px] mb-[50px]">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-[20px] gap-x-[20px] ml-[12%] mr-[12%]">
-            <div className="w-full h-full shadow-2xl hover:bg-blue-600  text-black">
+            <div className="w-full h-full shadow-2xl hover:bg-blue-600 hover:transition-colors hover:delay-200  text-black">
               <div className="custom-svg">
                 <svg
                   viewBox="0 0 64 64"
-                  className="m-auto w-[100px] mt-[35px]"
+                  className="m-auto w-[100px] pt-[35px]"
                   id="Layer_1"
                   version="1.1"
                   xmlSpace="preserve"
@@ -107,17 +107,17 @@ const Projects = () => {
                   News API.
                 </p>
                 <div className="h-[50px]  text-white cursor-pointer text-end pr-[20px]">
-                  <a href="https://github.com/meetmandaliya/News-Website/">
+                  <a target="_blank" href="https://github.com/meetmandaliya/News-Website/">
                     Github-Link <i className="fa fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
               </div>
             </div>
-            <div className="w-full h-full shadow-2xl hover:bg-blue-600  text-black">
+            <div className="w-full h-full shadow-2xl hover:bg-blue-600 hover:transition-colors hover:delay-200  text-black">
               <div className="custom-svg">
                 <svg
                   viewBox="0 0 48 48"
-                  className="m-auto w-[100px] mt-[35px]"
+                  className="m-auto w-[100px] pt-[35px]"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -127,7 +127,6 @@ const Projects = () => {
                     strokeLinejoin="round"
                   ></g>
                   <g id="SVGRepo_iconCarrier">
-                    
                     <path
                       d="M6 11.25C6 8.35051 8.3505 6 11.25 6H36.75C39.6495 6 42 8.3505 42 11.25V24.0436C41.2196 23.544 40.3823 23.1255 39.5 22.7999V11.25C39.5 9.73122 38.2688 8.5 36.75 8.5H11.25C9.73122 8.5 8.5 9.73122 8.5 11.25V36.75C8.5 38.2688 9.73122 39.5 11.25 39.5H22.7999C23.1255 40.3823 23.544 41.2196 24.0436 42H11.25C8.35051 42 6 39.6495 6 36.75V11.25Z"
                       fill="currentColor"
@@ -163,20 +162,20 @@ const Projects = () => {
                 <p className="p-4 pb-2 pt-[0px] font-serif text-justify text-black">
                   A form builder website lets users create custom forms via
                   drag-and-drop, providing customizable fields and output in
-                  HTML or JSON for integration or embedding
+                  HTML or JSON for integration or embedding.
                 </p>
                 <div className="h-[50px] text-white cursor-pointer text-end pr-[20px]">
-                  <a href="https://github.com/meetmandaliya/News-Website/">
+                  <a target="_blank"  href="https://github.com/MeetMandaliya/Form-builder">
                     Github-Link <i className="fa fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
               </div>
             </div>
-            <div className="w-full h-full shadow-2xl hover:bg-blue-700  text-black">
+            <div className="w-full h-full shadow-2xl hover:bg-blue-600 hover:transition-colors hover:delay-200  text-black">
               <div className="custom-svg">
                 <svg
                   viewBox="0 0 64 64"
-                  className="m-auto w-[100px] mt-[35px]"
+                  className="m-auto w-[100px] pt-[35px]"
                   id="Layer_1"
                   version="1.1"
                   xmlSpace="preserve"
@@ -262,17 +261,19 @@ const Projects = () => {
                 </svg>
                 <div className="flex flex-col ">
                   <h1 className="text-black  text-[13px] font-[500] tracking-wider mt-[20px] text-center">
-                  FASHION CART
+                    FASHION CART
                   </h1>
                   <div className="w-[30px] m-auto h-[4px] mb-[25px] text-blue-700 bg-black !hover:text-black  mt-[10px]"></div>
                 </div>
                 <p className="p-4 pt-[10px] font-serif text-justify text-black">
-                 
-Crafted 'Fashion Cart,' an e-commerce destination tailored for fashion enthusiasts, leveraging PHP and MySQL. 
-In addition to the customer-facing functionalities, I also engineered an intuitive admin panel for 'Fashion Cart,' providing seamless management of product listings, orders, and customer accounts.
+                  Crafted 'Fashion Cart,' an e-commerce destination tailored for
+                  fashion enthusiasts, leveraging PHP and MySQL. In addition to
+                  the customer-facing functionalities, I also engineered an
+                  intuitive admin panel for 'Fashion Cart,' providing seamless
+                  management of product listings, orders, and customer accounts.
                 </p>
                 <div className="h-[50px]  text-white cursor-pointer text-end pr-[20px]">
-                  <a href="https://github.com/meetmandaliya/News-Website/">
+                  <a target="_blank" href="https://github.com/MeetMandaliya/Fashion-cart">
                     Github-Link <i className="fa fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
