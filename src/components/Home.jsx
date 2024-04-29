@@ -20,7 +20,6 @@ const Home = ({ scrollToSection, activeSection }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -81,21 +80,21 @@ const Home = ({ scrollToSection, activeSection }) => {
             <nav
               className={`${
                 showNavbar
-                  ? `fixed shadow-xl bg-white h-[360px] pb-[20px] z-50 ${navbarColor} top-0 w-screen flex flex-col`
+                  ? `fixed shadow-xl bg-white h-[300px] pb-[20px] z-50 ${navbarColor} top-0 w-screen flex flex-col`
                   : `fixed h-[70px] z-50 ${navbarColor} top-0 w-screen flex justify-between`
               }`}
             >
               <div
-                className={`ml-[12%] lg:ml-[12%] m-auto pt-7 w-[100px] sm:w-[120px] !-mt-2`}
+                className={`ml-[10%] lg:ml-[10%] m-auto pt-7 w-[100px] sm:w-[120px] !-mt-2`}
               >
-                <img src={logo} alt="Image" />
+                <div onClick={() => scrollToSection("home")} className="cursor-pointer" ><img src={logo} alt="Image" /></div>
               </div>
-              <div className="absolute right-[12%] top-0 ">
+              <div className="absolute  right-[12%] top-0 ">
                 <div
                   className={`${showNavbar ? "block" : "hidden"} pt-[26px]`}
                   onClick={closeNavbar}
                 >
-                  <i class="text-[20px] fa fa-solid fa-xmark"></i>
+                  <i className="text-[20px] fa fa-solid fa-xmark"></i>
                 </div>
                 <div className={`${showMenu ? "" : "hidden"}`}>
                   <ul
@@ -105,7 +104,7 @@ const Home = ({ scrollToSection, activeSection }) => {
                   >
                     <span
                       onClick={displayNavbar}
-                      className="h-[15px] flex gap-x-1 mr-[12%]"
+                      className="h-[15px] flex gap-x-1 mr-[10%]"
                     >
                       <i className="fa mt-[5px] fa-solid fa-bars"></i>
                       <span> MENU </span>
@@ -116,24 +115,28 @@ const Home = ({ scrollToSection, activeSection }) => {
               <ul
                 className={`${
                   showNavbar
-                    ? "flex flex-col pl-[12%] gap-5"
-                    : "hidden pt-6 lg:flex gap-12"
-                }  montserrat_font -pt-[1px] mr-[12%] lg:mr-[12%]`}
+                    ? "flex flex-col pl-[10%] gap-5"
+                    : "hidden pt-6 !pb-4 lg:flex gap-12"
+                } montserrat_font -pt-[1px] mr-[10%]`}
               >
                 <li className="">
                   <a
                     className={`cursor-pointer ${
-                      activeSection === "home" ? "active" : "border_effect"
+                      activeSection === "home"
+                        ? "active"
+                        : "lg:border_effect hover:border-[2px] hover:border-t-0 hover:border-b-blue-700 border-b-[2px] hover:transition-all hover:border-r-0 hover:border-l-0 hover:delay-300 hover:after:w-full border-transparent pb-[5px]"
                     }`}
                     onClick={() => scrollToSection("home")}
                   >
                     Home
                   </a>
                 </li>
-                <li className="">
+                <li>
                   <a
-                    className={`cursor-pointer h-[30px] ${
-                      activeSection === "about" ? "active" : "border_effect"
+                    className={`cursor-pointer ${
+                      activeSection === "about"
+                        ? "active"
+                        : "lg:border_effect hover:border-[2px] hover:border-t-0 hover:border-b-blue-700 border-b-[2px] hover:transition-all hover:border-r-0 hover:border-l-0 hover:delay-300 hover:after:w-full border-transparent pb-[5px]"
                     }`}
                     onClick={() => scrollToSection("about")}
                   >
@@ -143,7 +146,9 @@ const Home = ({ scrollToSection, activeSection }) => {
                 <li className="">
                   <a
                     className={`cursor-pointer ${
-                      activeSection === "resume" ? "active" : "border_effect"
+                      activeSection === "resume"
+                        ? "active"
+                        : "lg:border_effect hover:border-[2px] hover:border-t-0 hover:border-b-blue-700 border-b-[2px] hover:transition-all hover:border-r-0 hover:border-l-0 hover:delay-300 hover:after:w-full border-transparent pb-[5px]"
                     }`}
                     onClick={() => scrollToSection("resume")}
                   >
@@ -153,7 +158,9 @@ const Home = ({ scrollToSection, activeSection }) => {
                 <li className="">
                   <a
                     className={`cursor-pointer ${
-                      activeSection === "projects" ? "active" : "border_effect"
+                      activeSection === "projects"
+                        ? "active"
+                        : "lg:border_effect hover:border-[2px] hover:border-t-0 hover:border-b-blue-700 border-b-[2px] hover:transition-all hover:border-r-0 hover:border-l-0 hover:delay-300 hover:after:w-full border-transparent pb-[5px]"
                     }`}
                     onClick={() => scrollToSection("projects")}
                   >
@@ -163,7 +170,9 @@ const Home = ({ scrollToSection, activeSection }) => {
                 <li className="">
                   <a
                     className={`cursor-pointer ${
-                      activeSection === "contact" ? "active" : "border_effect"
+                      activeSection === "contact"
+                        ? "active"
+                        : "lg:border_effect hover:border-[2px] hover:border-t-0 hover:border-b-blue-700 border-b-[2px] hover:transition-all hover:border-r-0 hover:border-l-0 hover:delay-300 hover:after:w-full border-transparent pb-[5px]"
                     }`}
                     onClick={() => scrollToSection("contact")}
                   >
@@ -174,7 +183,7 @@ const Home = ({ scrollToSection, activeSection }) => {
             </nav>
           </div>
           <div className="relative">
-            <div className="absolute sm:right-[55%] right-[75%] -top-[240px] sm:-top-[240px]">
+            <div className="absolute handle_left  sm:right-[60%] md:right-[58%] lg:right-[58%] xl:right-[55%] right-[75%] -top-[240px] sm:-top-[240px]">
               {/* <div className="absolute lg:top-[420px] top-[390px] left-[27%] sm:right-0 sm:top-[420px] sm:left-[34%] xl:top-[420px] md:left-[38%] lg:left-[40%] xl:left-[42%]"> */}
               <div className="relative w-[20px]">
                 <div className="w-0 rotate-90 h-0 border-l-[130px] border-l-transparent border-r-transparent border-r-[110px] border-b-[140px] border-b-[#ebefff]"></div>
@@ -214,12 +223,12 @@ const Home = ({ scrollToSection, activeSection }) => {
             </div>
           </div>
         </div>
-        <div className="absolute navbar_white z-30 top-[150px] sm:top-[170px] md:top-[200px] w-full">
+        <div className="absolute navbar_white z-30 top-[190px] sm:top-[170px] md:top-[200px] w-full">
           <div className="flex flex-col text-center justify-center">
-            <h1 className="lg:font-[800] sm:font-[700] font-[600] md:font-[800] text-[#3e64ff] text-[14px] sm:text-[15px] md:text-[16px] tracking-widest">
+            <h1 className="lg:font-[800] sm:font-[700] font-[600] md:font-[800] text-[#3e64ff] text-[13px] sm:text-[15px] md:text-[16px] tracking-widest">
               HEY! I AM
             </h1>
-            <h1 className="lg:font-[800] sm:font-[700] font-[600] md:font-[800] text-[38px] sm:text-[42px] md:text-[45px] lg:text-[50px] xl:text-[60px]">
+            <h1 className="lg:font-[800] name_font sm:font-[700] font-[600] md:font-[800] text-[35px] sm:text-[42px] md:text-[45px] lg:text-[50px] xl:text-[60px]">
               MEET MANDALIYA
             </h1>
             <h1 className="lg:font-[800] sm:font-[700] font-[600]  md:font-[800] text-[15px] sm:text-[17px] md:text-[18px] lg:text-[20px] xl:text-[25px]">

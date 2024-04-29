@@ -6,7 +6,7 @@ const Projects = () => {
       <section className="pt-[60px] sm:pt-[100px]">
         <div className="text-center text-[50px] font-[700]">Projects</div>
         <div className="w-full mt-[50px] mb-[50px]">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-[20px] gap-x-[20px] ml-[12%] mr-[12%]">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-[20px] gap-x-[20px]  ml-[10%] mr-[10%]">
             <div className="w-full h-full shadow-2xl hover:bg-blue-600 hover:transition-colors hover:delay-200  text-black">
               <div className="custom-svg">
                 <svg

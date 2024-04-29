@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 
 const Resume = () => {
-  const circumference = 2 * Math.PI * 40;
-
+  
   const [activeSection, setActiveSection] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
-
-
+  
+  const circumference = 2 * Math.PI * 40;
+  
   const sectionRefs = {
     education: useRef(null),
     skills: useRef(null),
@@ -56,7 +56,7 @@ const Resume = () => {
       {
         root: null,
         rootMargin: "10px",
-        threshold: 0.4,
+        threshold: 0.1,
       }
     );
     if (sectionRef.current) {
@@ -68,17 +68,19 @@ const Resume = () => {
       }
     };
   }, []);
-
   return (
     <>
-      <section className={`z-20 ${isVisible ? "opacity-70" : "opacity-100"}`} ref={sectionRef}>
+      <section className={`z-20 ${isVisible ? "opacity-100" : "opacity-100"}`}>
         <div className="flex flex-col sm:flex-row pt-[50px]">
-        <div className="sm:hidden block m-auto w-full">
+          <div className="sm:hidden block m-auto w-full">
             <h1 className="text-[40px] pt-[50px] text-center">Resume</h1>
           </div>
-          <div className={`sm:w-4/12 sm:sticky sm:top-[90px] mb-[20%] sm:h-full h-[10%] w-4/12 sm:mt-[70px] ml-[12%] ${
-            isVisible ? "translate-y-0" : "translate-y-10 delay-100 opacity-100"
-          }`}>
+          <div
+            ref={sectionRef}
+            className={`${
+              isVisible ? "opacity-100" : "opacity-100"
+            } sm:w-4/12 sm:sticky sm:top-[90px] mb-[20%] sm:h-full h-[10%] w-4/12 sm:mt-[70px] ml-[10%] `}
+          >
             <div className="sm:h-full p-4 pl-0 pr-0">
               <ul className="font-[600]">
                 <li
@@ -109,11 +111,8 @@ const Resume = () => {
                             strokeLinejoin="round"
                           ></g>
                           <g id="SVGRepo_iconCarrier">
-                            
                             <g>
-                              
                               <g>
-                                
                                 <rect
                                   y="139.474"
                                   style={{ fill: "#0e00d6" }}
@@ -129,7 +128,7 @@ const Resume = () => {
                     Education
                   </span>
                 </li>
-                
+
                 <li
                   onClick={() => scrollToSection("skills")}
                   className={`mt-[15px] cursor-pointer ${
@@ -137,7 +136,6 @@ const Resume = () => {
                   } `}
                 >
                   <span className="flex font-[700]">
-                  
                     {activeSection === "skills" && (
                       <>
                         <svg
@@ -159,11 +157,8 @@ const Resume = () => {
                             strokeLinejoin="round"
                           ></g>
                           <g id="SVGRepo_iconCarrier">
-                            
                             <g>
-                              
                               <g>
-                                
                                 <rect
                                   y="139.474"
                                   style={{ fill: "#0e00d6" }}
@@ -207,11 +202,8 @@ const Resume = () => {
                             strokeLinejoin="round"
                           ></g>
                           <g id="SVGRepo_iconCarrier">
-                            
                             <g>
-                              
                               <g>
-                                
                                 <rect
                                   y="139.474"
                                   style={{ fill: "#0e00d6" }}
@@ -231,7 +223,9 @@ const Resume = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:pl-[0px] pl-[12%] pr-[12%] w-full">
+          <div
+            className={` flex flex-col sm:pl-[0px] padding_left pl-[10%] padding_right pr-[10%] w-full`}
+          >
             <div ref={sectionRefs.education} id="education">
               <div className="sm:p-4 p-0 pr-0">
                 <h1 className="text-[30px] mt-[80px] sm:mt-[76px] font-[800] text-blue-700">
@@ -250,7 +244,13 @@ const Resume = () => {
                   </p>
                 </div>
                 <div className="pt-[20px] ">
-                  <div className="flex-row flex  sm:gap-x-6 gap-x-3  gap-y-6  mt-[30px]">
+                  <div
+                    className={`flex-row flex  sm:gap-x-6 gap-x-3  gap-y-6  mt-[30px] ${
+                      isVisible
+                        ? "translate-y-0"
+                        : "translate-y-10 delay-400 opacity-100"
+                    }`}
+                  >
                     <div className="flex flex-col">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -709,7 +709,6 @@ const Resume = () => {
                     </h3>
                   </div>
                 </div>
-
                 <div className="flex flex-col rounded h-[180px] shadow-xl items-center">
                   <div className="relative m-auto">
                     <svg
@@ -752,8 +751,6 @@ const Resume = () => {
                     </h3>
                   </div>
                 </div>
-                
-
                 <div className="flex flex-col rounded h-[180px] shadow-xl items-center">
                   <div className="relative m-auto">
                     <svg
@@ -834,7 +831,6 @@ const Resume = () => {
                     <h3 className="text-lg font-semibold uppercase">PHP</h3>
                   </div>
                 </div>
-
                 <div className="flex flex-col rounded h-[180px] shadow-xl items-center">
                   <div className="relative m-auto">
                     <svg
@@ -875,7 +871,6 @@ const Resume = () => {
                     <h3 className="text-lg font-semibold uppercase">html</h3>
                   </div>
                 </div>
-
                 <div className="flex flex-col rounded h-[180px] shadow-xl items-center">
                   <div className="relative m-auto">
                     <svg
@@ -916,16 +911,15 @@ const Resume = () => {
                     <h3 className="text-lg font-semibold uppercase">Css</h3>
                   </div>
                 </div>
-
                 <div className="flex flex-col rounded h-[180px] shadow-xl items-center">
-                  <div className="relative m-auto">
+                  <div className="relative sm:pt-0  m-auto">
                     <svg
                       className="transform -rotate-90"
                       width="100"
                       height="100"
                     >
                       <circle
-                        className="text-gray-300"
+                        className="text-gray-300 pt-[10px]"
                         strokeLinecap="round"
                         strokeWidth="5"
                         fill="transparent"
@@ -949,7 +943,7 @@ const Resume = () => {
                     </svg>
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                       <div className="text-center">
-                        <p className="text-2xl text-black">{`95%`}</p>
+                        <p className="text-2xl text-black">{`${95}%`}</p>
                       </div>
                     </div>
                   </div>
@@ -959,11 +953,9 @@ const Resume = () => {
                     </h3>
                   </div>
                 </div>
-                
-
-                
               </div>
             </div>
+            <hr className="mt-[50px]" />
             <div
               className="w-full pt-[100px] mb-[50px]"
               ref={sectionRefs.experience}
@@ -974,7 +966,6 @@ const Resume = () => {
                   Experience
                 </h2>
               </div>
-
               <div className="flex-row sm:p-4 p-0 pr-[0px] flex  sm:gap-x-6 gap-x-3  gap-y-6 mt-[30px]">
                 <div className="flex flex-col">
                   <svg
@@ -1006,14 +997,18 @@ const Resume = () => {
                   </h1>
                   <p className="mt-[20px] text-justify text-[18px]">
                     During my internship in web development, I gained hands-on
-                    experience with React.js, JavaScript, jQuery and PHP. This
-                    role allowed me to work on various projects, building
-                    interactive web applications from the ground up and learning
-                    from experienced developers. I learned to create modular
-                    components, manage state, and integrate third-party
-                    libraries, such as jQuery, to enhance user interactivity. My
-                    role involved building user interfaces that were not only
-                    visually engaging but also responsive and accessible. <br />
+                    experience with React.js, JavaScript, JQuery, Php. This role
+                    allowed me to work on various projects, building interactive
+                    web applications from the ground up and learning from
+                    experienced developers. I learned to architect and implement
+                    robust backend solutions, leveraging php and AJAX for
+                    dynamic and asynchronous functionality and MySQL for
+                    database management. Additionally, I honed my skills in
+                    creating modular components, managing application state, and
+                    seamlessly integrating third-party libraries like jQuery to
+                    enhance user interactivity. My role involved building user
+                    interfaces that were not only visually engaging but also
+                    responsive and accessible. <br />
                     Overall, this internship solidified my knowledge of web
                     development and gave me hands-on experience with multiple
                     technologies. It also motivated me to continue learning and

@@ -12,22 +12,22 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
     const sectionElement = document.getElementById(sectionId);
       sectionElement.scrollIntoView({ behavior: 'smooth' });
       if(sectionId.length !== 0){
-        setActiveSection(sectionId);
       }
   };
 
   const handleScroll = () => {
     const sections = document.querySelectorAll('section');
-    const scrollPos = window.scrollY;
+    const scrollPosition = window.scrollY;
     
     sections.forEach((section) => {
       const top = section.offsetTop - 100; 
       const height = section.clientHeight;
       
-      if (scrollPos >= top && scrollPos < top + height) {
+      if (scrollPosition >= top && scrollPosition < top + height) {
         if(section.id.length !== 0){
           setActiveSection(section.id);
         }
@@ -41,6 +41,8 @@ function App() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [handleScroll]);
+
+ 
   return (
     <div>
       <section id='home'>
