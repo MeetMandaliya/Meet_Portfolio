@@ -1,5 +1,6 @@
 import React from "react";
-import buildings from "../assets/buildings.jpg";
+import buildings from "../assets/myimage.png";
+
 
 const Contact = () => {
 
@@ -174,21 +175,21 @@ const Contact = () => {
             <div className="mb-4">
               <input
                 type="text"
-                className="border border-gray-300 rounded-md p-2 w-full"
+                className="border border-gray-300 rounded-md p-4 w-full"
                 placeholder="Your Name"
               />
             </div>
             <div className="mb-4">
               <input
                 type="email"
-                className="border border-gray-300 rounded-md p-2 w-full"
+                className="border border-gray-300 rounded-md p-4 w-full"
                 placeholder="Your Email"
               />
             </div>
             <div className="mb-4">
               <input
                 type="text"
-                className="border border-gray-300 rounded-md p-2 w-full"
+                className="border border-gray-300 rounded-md p-4 w-full"
                 placeholder="Subject"
               />
             </div>
@@ -198,16 +199,11 @@ const Contact = () => {
                 id=""
                 cols="30"
                 rows="7"
-                className="border border-gray-300 rounded-md p-2 w-full"
+                className="border border-gray-300 rounded-md p-4 w-full"
                 placeholder="Message"
               ></textarea>
             </div>
             <div className="mb-4">
-              {/* <input
-                type="submit"
-                value="Send Message"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full cursor-pointer"
-              /> */}
               <button className=" hover:border-blue-600 border  text-white font-bold py-2 px-4 rounded-full cursor-pointer relative overflow-hidden group">
                 <span className="absolute inset-0 bg-blue-600 transition-transform duration-300 ease-out transform translate-x-0 group-hover:translate-x-full "></span>
                 <span className="relative z-10 flex justify-center items-center text-white group-hover:text-blue-700 ">
@@ -218,7 +214,7 @@ const Contact = () => {
           </form>
         </div>
 
-        <div className="col-span-1 w-full h-[475px] md:col-span-1 flex justify-center md:justify-start">
+        <div className="col-span-1 w-full h-[575px] md:col-span-1 flex justify-center md:justify-start">
           <img src={buildings} className="w-full md:h-auto" alt="" />
         </div>
       </div>

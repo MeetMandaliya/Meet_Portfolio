@@ -105,6 +105,7 @@ const Projects = () => {
                   This project is a responsive news website. That fetch and
                   display top headlines based on various categories using the
                   News API.
+                  With the implementation of a news API, the website can offer users a diverse selection of news articles from reputable sources. This enhances the website's credibility and ensures that users have access to reliable information.
                 </p>
                 <div className="h-[50px]  text-white cursor-pointer text-end pr-[20px]">
                   <a target="_blank" href="https://github.com/meetmandaliya/News-Website/">
@@ -160,9 +161,7 @@ const Projects = () => {
                   <div className="w-[30px] m-auto h-[4px] mb-[25px] text-blue-700 bg-black !hover:text-black  mt-[10px]"></div>
                 </div>
                 <p className="p-4 pb-2 pt-[0px] font-serif text-justify text-black">
-                  A form builder website lets users create custom forms via
-                  drag-and-drop, providing customizable fields and output in
-                  HTML or JSON for integration or embedding.
+                  A form builder website lets users create custom forms for various purposes without the need for coding expertise via drag-and-drop, providing customizable fields and output in HTML or JSON for integration or embedding.
                 </p>
                 <div className="h-[50px] text-white cursor-pointer text-end pr-[20px]">
                   <a target="_blank"  href="https://github.com/MeetMandaliya/Form-builder">

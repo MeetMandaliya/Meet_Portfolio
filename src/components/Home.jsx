@@ -75,7 +75,7 @@ const Home = ({ scrollToSection, activeSection }) => {
     <>
       <section>
         <div>
-          <div className="relative w-[50%] bg-[#ebefff] h-[635px]"></div>
+          <div className="relative w-[50%] bg-[#ebefff] h-[100vh]"></div>
           <div className="">
             <nav
               className={`${
